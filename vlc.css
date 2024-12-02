@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+html, body {
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+    
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scroll bars */
+}
+
+/*******header******/
+header{
+    height: 4.5rem;
+    background: linear-gradient(135deg, #fe2057, #ffffff,#fe2057);
+
+}
+
+.titlebar{
+    height: 50%;
+    display: inline-flex;
+    font-size: 10px;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.title-img{
+    height: 70%;
+    margin-left: 1rem;
+}
+
+.title {
+    font-size: 1rem; /* Size of the title */
+    font-weight: bold; /* Make the text bold */
+    color: #ffffff; /* White color for the text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add a shadow for depth */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 1px; /* Space out the letters */
+    background: linear-gradient(45deg, #ff6f61, #d4a5a5); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    background-clip: text; /* Clip the background to the text */
+     /* Add padding around the text */
+    position: absolute;
+    right:87.5rem;
+    display: inline-block; /* Ensure the background and padding work correctly */
+}
+
+
+.menu{
+    position: relative;
+}
+
+.menu-bar{
+    display: flex;
+    gap:1rem;
+    margin-left: 1rem;
+    height: 50%;
+    align-items: center;
+    color: #ffffff;
+   
+}
+.menu-btn{
+    cursor: pointer;
+}
+.menu-btn1{
+    display: none;
+}
+.menu-btn:hover{
+    transform: scale(1.3);
+    color: black;
+}
+
+.menu:hover .menu-items{
+    display: block;
+}
+.menu-items{
+    color: #fe2057;
+}
+.menu-items li:hover{
+    background-color: rgb(4, 4, 4);
+    
+}
+
+.image{
+    left: 860px;
+    width: 10rem;
+    position: relative;
+    top: 350px;
+}
+
+footer{
+    height: 6rem; /* Adjusted to fit within the viewport */
+    position: relative;
+    background: linear-gradient(135deg, #fe2057, #ffffff,#fe2057);
+    
+}
+
+footer i{
+    font-size: 2.5rem;
+    position: absolute; 
+    top:2rem
+}
+
+#plays{
+    left:48%;
+}
+
+#pause{
+    left:48%;
+    display: none;
+}
+
+#Fast{
+    left:52%;
+}
+
+#Slow{
+    left:44%;
+}
+
+#Full{
+    left:90%;
+    top: 3rem;
+    font-size: 1.5rem;
+}
+
+.menu-items{
+    background-color: rgb(238, 238, 238);
+    position: absolute;
+    top:1px;
+    width: 9rem;
+    display: none;
+}
+
+li{
+    padding: 0.25rem;
+}
+
+.videoInput{
+    display: none;
+}
+
+main {
+    height: calc(95vh - 7rem); /* Adjusted height to fit within viewport */
+    background-color: #000000; /* Light Grey */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+
+.video{
+    height: 100%;
+}
+.video {
+    height: 100%;
+    z-index: 0;
+}
+.toast{
+    background-color:#fe20574e;
+    color: rgb(255, 255, 255);
+    position: fixed;
+    bottom: 7rem;
+    font-size: 2rem;
+    padding-left: 5%;
+    padding-right: 5%;
+    border-radius: 2rem;
+    text-align: center;
+    display: none;
+    z-index: 1000;
+}
+
+#progress {
+    width: 85%;
+    height: 10px;
+    background-color: #ddd;
+    position: relative;
+    top: 0.8rem;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#progressBar {
+    width: 0;
+    height: 100%;
+    background-color: hotpink;
+}
+
+#progressHandle {
+    width: 20px;
+    height: 20px;
+    background-color: hotpink;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px; /* Adjust vertical position */
+    cursor: pointer;
+}
+
+#video-timer {
+    color: #fff;
+    font-size: 1rem;
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+  
+}
+#video-timer span {
+    margin: 0 0.5rem;
+}
+#current-time{
+    position: absolute;
+    bottom:0.5rem;
+    right:40rem;
+  
+ }
+ #duration{
+    position: absolute;
+    bottom:0.5rem;
+    left:39rem;
+ }
+ #retry {
+    position: absolute;
+    left: 50%; /* Adjust position as needed */
+    top: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #fff;
+   /* display: none;*/
+    z-index: 1000;
+}
+
+#volume-icon {
+    
+    font-size: 1.5rem;
+   
+    cursor: pointer;
+    position: absolute;
+    left: 8%;
+    top: 3rem;
+}
+
+#volume-slider {
+    width: 100px;
+    color: #fe2057;
+    cursor: pointer;
+    position: absolute;
+    left: 10%;
+    top: 3.2rem;
+}
+
+#dropZone {
+    width: 80%;
+    height: 200px;
+    border: 3px dashed #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #999;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#dropZone {
+    /* Adjusted height to fit within viewport */
+    background-color: #00000000; /* Light Grey */
+    border: 2px dashed #cccccc00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaaaaa00;
+    position: absolute;
+    z-index: 1;
+}
+
+#dropZone.active {
+    border-color: #f00;
+    color: #f00;
+}
+
+#forward{
+    position: absolute;
+    left: 53rem;
+    top: 1.5rem;
+    height: 3rem;
+    cursor: pointer;
+}
+#backward{
+    position: absolute;
+    left: 39rem;
+    top: 1.5rem;
+    height: 3rem;
+    cursor: pointer;
+}
